@@ -12,6 +12,9 @@ namespace SpotiFake.DataBase.Mapeo
         public MapCancionesEscuchadas()
         {
             ToTable("CancionesEscuchadas");
+            HasKey(o => o.idCancionesEscuchadas);
+
+            HasRequired(o => o.usuario).WithMany(o => o.cancionesEscuchadas).HasForeignKey(o => o.idUsuario);
         }
     }
 }

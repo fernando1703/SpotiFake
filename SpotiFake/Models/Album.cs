@@ -7,7 +7,7 @@ namespace SpotiFake.Models
 {
     public class Album
     {
-        public int id { get; set; }
+        public int idAlbum { get; set; }
         public string nombre { get; set; }
         public Artista artista { get; set; }
         public DateTime fechaLanzamiento { get; set; }

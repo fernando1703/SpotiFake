@@ -7,7 +7,7 @@ namespace SpotiFake.Models
 {
     public class ListaReproduccion
     {
-        public int id { get; set; }
+        public int idListaReproduccion { get; set; }
         public string nombre { get; set; }
         public Usuario usuario { get; set; }
 

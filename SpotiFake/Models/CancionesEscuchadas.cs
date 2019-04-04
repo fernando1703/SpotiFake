@@ -7,9 +7,14 @@ namespace SpotiFake.Models
 {
     public class CancionesEscuchadas
     {
-        public int id { get; set; }
+        public int idCancionesEscuchadas { get; set; }
+
+        public int idUsuario { get; set; }
         public Usuario usuario { get; set; }
+
+        public int idCancion { get; set; }
         public Cancion cancion { get; set; }
+
         public DateTime fecha { get; set; }
     }
 }

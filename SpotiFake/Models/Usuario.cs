@@ -7,7 +7,7 @@ namespace SpotiFake.Models
 {
     public class Usuario
     {
-        public int id { get; set; }
+        public int idUsuario { get; set; }
         public string nombre { get; set; }
         public string correoElectronico { get; set; }
         public DateTime fechaCreación { get; set; }
