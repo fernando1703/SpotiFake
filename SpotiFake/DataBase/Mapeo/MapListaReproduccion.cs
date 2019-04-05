@@ -7,11 +7,16 @@ using System.Web;
 
 namespace SpotiFake.DataBase.Mapeo
 {
-    public class MapListaReproduccion : EntityTypeConfiguration<CancionesListaReproduccion>
+    public class MapListaReproduccion : EntityTypeConfiguration<ListaReproduccion>
     {
         public MapListaReproduccion()
         {
-            ToTable("CancionesListaReproduccion");
+            ToTable("ListaReproduccion");
+            HasKey(o => o.idListaReproduccion);
+
+            HasMany(o => o.cancionesListaReproduccion).WithRequired(o => o.listaReproduccion).HasForeignKey(o => o.idListaReproduccion);
+
+            HasRequired(o => o.usuario).WithMany(o => o.listaReproduccion).HasForeignKey(o => o.idUsuario);
         }
     }
 }

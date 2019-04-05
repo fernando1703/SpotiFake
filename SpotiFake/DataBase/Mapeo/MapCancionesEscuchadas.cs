@@ -15,6 +15,8 @@ namespace SpotiFake.DataBase.Mapeo
             HasKey(o => o.idCancionesEscuchadas);
 
             HasRequired(o => o.usuario).WithMany(o => o.cancionesEscuchadas).HasForeignKey(o => o.idUsuario);
+
+            HasRequired(o => o.cancion).WithMany(o => o.cancionesEscuchadas).HasForeignKey(o => o.idCancion);
         }
     }
 }

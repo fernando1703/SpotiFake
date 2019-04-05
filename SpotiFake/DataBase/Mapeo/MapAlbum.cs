@@ -12,6 +12,11 @@ namespace SpotiFake.DataBase.Mapeo
         public MapAlbum()
         {
             ToTable("Album");
+            HasKey(o => o.idAlbum);
+
+            HasRequired(o => o.artista).WithMany(o => o.album).HasForeignKey(o => o.idArtista);
+
+            HasMany(o => o.cancion).WithRequired(o => o.album).HasForeignKey(o => o.idAlbum);
         }
     }
 }

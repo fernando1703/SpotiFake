@@ -8,7 +8,11 @@ namespace SpotiFake.Models
     public class CancionesListaReproduccion
     {
         public int idCancionesListaReproduccion { get; set; }
+
+        public int idListaReproduccion { get; set; }
         public ListaReproduccion listaReproduccion { get; set; }
+
+        public int idCancion { get; set; }
         public Cancion cancion { get; set; }
     }
 }
