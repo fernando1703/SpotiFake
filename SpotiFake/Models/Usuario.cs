@@ -11,6 +11,8 @@ namespace SpotiFake.Models
         public string nombre { get; set; }
         public string correoElectronico { get; set; }
         public DateTime fechaCreación { get; set; }
+        public string rol { get; set; }
+        public string contraseña { get; set; }
 
         public List<ListaReproduccion> listaReproduccion { get; set; }
         public List<CancionesEscuchadas> cancionesEscuchadas { get; set; }

@@ -134,6 +134,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CancionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataBase\Mapeo\MapAlbum.cs" />
     <Compile Include="DataBase\Mapeo\MapArtista.cs" />
     <Compile Include="DataBase\Mapeo\MapCancion.cs" />
@@ -145,9 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904050109363_InitDatabase.cs" />
-    <Compile Include="Migrations\201904050109363_InitDatabase.Designer.cs">
-      <DependentUpon>201904050109363_InitDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201904060656541_InitDatabase.cs" />
+    <Compile Include="Migrations\201904060656541_InitDatabase.Designer.cs">
+      <DependentUpon>201904060656541_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
@@ -165,6 +167,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\EstiloLogin.css" />
+    <Content Include="Content\instruments_microphones_studio_room_record_3865_1366x768.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -196,9 +200,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\NuevoUsuario.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Servicios\" />
     <Folder Include="Views\Cancion\" />
   </ItemGroup>
   <ItemGroup>
@@ -215,8 +223,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904050109363_InitDatabase.resx">
-      <DependentUpon>201904050109363_InitDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904060656541_InitDatabase.resx">
+      <DependentUpon>201904060656541_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

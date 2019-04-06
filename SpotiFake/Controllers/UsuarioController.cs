@@ -6,14 +6,12 @@ using System.Web.Mvc;
 
 namespace SpotiFake.Controllers
 {
-    public class CancionController : Controller
+    public class UsuarioController : Controller
     {
-        // GET: Cancion
+        // GET: Usuario
         public ActionResult Index()
         {
             return View();
         }
-
-        
     }
 }
