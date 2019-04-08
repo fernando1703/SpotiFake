@@ -134,8 +134,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CancionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataBase\Mapeo\MapAlbum.cs" />
-    <Compile Include="DataBase\Mapeo\MapArtista.cs" />
     <Compile Include="DataBase\Mapeo\MapCancion.cs" />
     <Compile Include="DataBase\Mapeo\MapCancionesEscuchadas.cs" />
     <Compile Include="DataBase\Mapeo\MapCancionesListaReproduccion.cs" />
@@ -145,13 +143,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904050109363_InitDatabase.cs" />
-    <Compile Include="Migrations\201904050109363_InitDatabase.Designer.cs">
-      <DependentUpon>201904050109363_InitDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Album.cs" />
-    <Compile Include="Models\Artista.cs" />
     <Compile Include="Models\Cancion.cs" />
     <Compile Include="Models\CancionesEscuchadas.cs" />
     <Compile Include="Models\CancionesListaReproduccion.cs" />
@@ -213,11 +204,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904050109363_InitDatabase.resx">
-      <DependentUpon>201904050109363_InitDatabase.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

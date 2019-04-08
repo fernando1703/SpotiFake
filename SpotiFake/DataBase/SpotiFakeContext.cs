@@ -10,8 +10,6 @@ namespace SpotiFake.DataBase
 {
     public class SpotiFakeContext:DbContext
     {
-        public IDbSet<Album> Albums { get; set; }
-        public IDbSet<Artista> Artistas { get; set; }
         public IDbSet<Cancion> Cancions { get; set; }
         public IDbSet<CancionesEscuchadas> CancionesEscuchadass { get; set; }
         public IDbSet<CancionesListaReproduccion> cancionesListaReproduccions { get; set; }
@@ -22,8 +20,6 @@ namespace SpotiFake.DataBase
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Configurations.Add(new MapAlbum());
-            modelBuilder.Configurations.Add(new MapArtista());
             modelBuilder.Configurations.Add(new MapCancion());
             modelBuilder.Configurations.Add(new MapCancionesEscuchadas());
             modelBuilder.Configurations.Add(new MapCancionesListaReproduccion());
