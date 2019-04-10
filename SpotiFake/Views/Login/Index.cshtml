@@ -13,17 +13,17 @@
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
 
             <div class="login-form">
-                <form action="" method="post">
+                <form action="/Usuario/Ingreso" method="post">
 
                     <div class="sign-in-htm">
 
                         <div class="group">
                             <label for="user" class="label">Nombre de usuario</label>
-                            <input name="usuarioNombre" id="user" type="text" class="input" required>
+                            <input name="correoElectronico" id="user" type="text" class="input" required>
                         </div>
                         <div class="group">
                             <label for="pass" class="label">Contraseña</label>
-                            <input name="contrasenia" id="pass" type="password" class="input" data-type="password" required>
+                            <input name="contraseña" id="pass" type="password" class="input" data-type="password" required>
                         </div>
                         
                         <div class="group">
@@ -39,9 +39,9 @@
 
                 </form>
 
-                <form action="/Login/NuevoUsuario">
+                <form action="/Usuario/NuevoUsuario">
                     <div class="group">
-                        <input type="submit" class="button" value="Registrar Cliente">
+                        <input type="submit" class="button" value="Registrar Usuario">
                     </div>
                 </form>
             </div>
