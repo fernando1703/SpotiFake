@@ -14,6 +14,9 @@ namespace SpotiFake.Controllers
             return View();
         }
 
-        
+        public ActionResult agregar()
+        {
+
+        }
     }
 }
