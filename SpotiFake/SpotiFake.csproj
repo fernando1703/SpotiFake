@@ -147,9 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904060656541_InitDatabase.cs" />
-    <Compile Include="Migrations\201904060656541_InitDatabase.Designer.cs">
-      <DependentUpon>201904060656541_InitDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201904050109363_InitDatabase.cs" />
+    <Compile Include="Migrations\201904050109363_InitDatabase.Designer.cs">
+      <DependentUpon>201904050109363_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Album.cs" />
