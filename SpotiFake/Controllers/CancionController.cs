@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SpotiFake.DataBase;
+using SpotiFake.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,15 +10,25 @@ namespace SpotiFake.Controllers
 {
     public class CancionController : Controller
     {
+        SpotiFakeContext spotiFakeContext = new SpotiFakeContext();
+
         // GET: Cancion
         public ActionResult Index()
         {
-            return View();
+            var cancion = spotiFakeContext.Cancions.ToList();
+            return View("Index", cancion);
         }
 
-        public ActionResult agregar()
+        public ViewResult registrarCancion()
         {
-            return View();
+            return View("FormularioCancion", new Cancion());
+        }
+
+        public ActionResult agregar(Cancion cancion)
+        {
+            spotiFakeContext.Cancions.Add(cancion);
+            spotiFakeContext.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
