@@ -10,7 +10,9 @@ body {
 *, :after, :before {
     box-sizing: border-box
 }
-
+p{
+    color:white;
+}
 .clearfix:after, .clearfix:before {
     content: '';
     display: table

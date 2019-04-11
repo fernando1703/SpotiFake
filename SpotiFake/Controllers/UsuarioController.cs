@@ -5,16 +5,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace SpotiFake.Controllers
 {
+    
     public class UsuarioController : Controller
     {
         SpotiFakeContext conexion = new SpotiFakeContext();
         // GET: Usuario
+        [Authorize]
         public ActionResult UsuarioIndex(Usuario usuario)
         {
             return View(usuario);
+        }
+        public ActionResult logOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
         }
         public ActionResult GuardarUsuario(Usuario usuario)
         {
@@ -33,25 +41,7 @@ namespace SpotiFake.Controllers
         {
             return View("NuevoUsuario", new Usuario());
         }
-        public ActionResult Ingreso(Usuario usuario)
-        {
-            Usuario usuario_Confirmado;
-            //con js ya no es importante usar el try catch 
-            try
-            {
-                usuario_Confirmado = conexion.Usuarios.Where(o => o.correoElectronico == usuario.correoElectronico && o.contraseña == usuario.contraseña).First();
-            }
-            catch (Exception)
-            {
-
-                return View("UsuarioIndex");
-            }
-            if (usuario.rol=="Admin")
-            {
-                return View("AdminIndex",usuario_Confirmado);
-            }
-            return View("UsuarioIndex",usuario_Confirmado);
-        }
+        
         public ActionResult AdminIndex(Usuario usuario)
         {
             return View();
