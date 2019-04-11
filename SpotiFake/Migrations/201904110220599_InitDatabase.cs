@@ -7,14 +7,12 @@ namespace SpotiFake.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Cancion", "genero", c => c.String());
-            AddColumn("dbo.Cancion", "imagen", c => c.String());
+            AddColumn("dbo.Cancion", "fechaRegistro", c => c.DateTime(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Cancion", "imagen");
-            DropColumn("dbo.Cancion", "genero");
+            DropColumn("dbo.Cancion", "fechaRegistro");
         }
     }
 }

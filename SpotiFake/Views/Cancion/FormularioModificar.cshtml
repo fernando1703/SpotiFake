@@ -1,22 +1,23 @@
 ﻿
 @{
-    ViewBag.Title = "FormularioCancion";
+    ViewBag.Title = "FormularioModificar";
 }
 
-<h1>SPOTIFAKE</h1>
+<h2>SPOTIFAKE</h2>
 
 <div class="row">
 
     <div class="col-md-6 col-md-offset-3">
 
-        <form action="/Cancion/agregar" method="post">
+        <form action="/Cancion/actualizar?idCancion=@Model.idCancion" method="post">
 
-            <h3>Registro de canción</h3>
+            <h3>Modificar Canción</h3>
             <hr />
 
             <div class="form-group">
                 <label>Nombre de canción</label>
                 <input class="form-control" name="nombre" value="@Model.nombre" required />
+                @Html.ValidationMessage("nombre", new { style = "color: Red" })
             </div>
 
             <div class="form-group">
@@ -25,26 +26,26 @@
             </div>
             <div class="form-group">
                 <label>Nombre de álbum</label>
-                <input class="form-control" name="album" value="@Model.album" />
+                <input class="form-control" name="album" value="@Model.album" required />
             </div>
             <div class="form-group">
                 <label>Género</label>
-                <input class="form-control" name="genero" value="@Model.genero" />
+                <input class="form-control" name="genero" value="@Model.genero" required />
             </div>
             <div class="form-group">
                 <label>Duración de canción</label>
-                <input class="form-control" name="duracionCancion" value="@Model.duracionCancion" />
+                <input class="form-control" name="duracionCancion" value="@Model.duracionCancion" required />
             </div>
             <div class="form-group">
                 <label>Fecha de lanzamiento</label>
-                <input class="form-control" type="date" name="fechaLanzamiento" value="@Model.fechaLanzamiento"/>
+                <input class="form-control" name="fechaLanzamiento" value="@Model.fechaLanzamiento" required />
             </div>
             <div class="form-group">
                 <label>Nombre de imagen</label>
-                <input class="form-control" name="imagen" value="@Model.imagen" />
+                <input class="form-control" name="imagen" value="@Model.imagen" required />
             </div>
 
-            <button class="btn-danger">Guardar</button>
+            <button class="btn-danger">Actualizar</button>
 
         </form>
     </div>

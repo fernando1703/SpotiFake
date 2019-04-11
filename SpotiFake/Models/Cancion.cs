@@ -15,6 +15,7 @@ namespace SpotiFake.Models
         public string genero { get; set; }
         public double duracionCancion { get; set; }
         public DateTime fechaLanzamiento { get; set; }
+        public DateTime fechaRegistro { get; set; }
         public String imagen { get; set; }
 
         public List<CancionesEscuchadas> cancionesEscuchadas { get; set; }
