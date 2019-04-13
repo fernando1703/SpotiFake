@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "NuevoUsuario";
+}
+<html>
+<head>
+
+</head>
+<body>
+    <h2>Nuevo Usuario</h2>
+    <form action="/Usuario/GuardarUsuario" method="post">
+        <label>Nombres</label>
+        <input name="nombre" value="@Model.nombre" />
+        <br />
+        <label>correoElectronico</label>
+        <input name="correoElectronico" value="@Model.correoElectronico" />
+        <br />
+
+        <label>contraseña</label>
+        <input name="contraseña" value="@Model.contraseña" />
+        <br />
+        <button>Guardar</button>
+    </form>
+</body>
+</html>
+

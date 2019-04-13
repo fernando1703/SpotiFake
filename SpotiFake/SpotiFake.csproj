@@ -134,6 +134,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CancionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataBase\Mapeo\MapCancion.cs" />
     <Compile Include="DataBase\Mapeo\MapCancionesEscuchadas.cs" />
     <Compile Include="DataBase\Mapeo\MapCancionesListaReproduccion.cs" />
@@ -161,6 +163,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\EstiloLogin.css" />
+    <Content Include="Content\instruments_microphones_studio_room_record_3865_1366x768.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -202,6 +206,12 @@
     <Content Include="Views\Cancion\Index.cshtml" />
     <Content Include="Views\Cancion\FormularioCancion.cshtml" />
     <Content Include="Views\Cancion\FormularioModificar.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\messenge.cshtml" />
+    <Content Include="Views\Usuario\NuevoUsuario.cshtml" />
+    <Content Include="Views\Usuario\UsuarioIndex.cshtml" />
+    <Content Include="Views\Usuario\AdminIndex.cshtml" />
+    <Content Include="Views\Shared\_LayoutUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
