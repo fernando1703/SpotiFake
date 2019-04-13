@@ -2,25 +2,35 @@
 @{
     ViewBag.Title = "NuevoUsuario";
 }
-<html>
-<head>
 
-</head>
-<body>
-    <h2>Nuevo Usuario</h2>
-    <form action="/Usuario/GuardarUsuario" method="post">
-        <label>Nombres</label>
-        <input name="nombre" value="@Model.nombre" />
-        <br />
-        <label>correoElectronico</label>
-        <input name="correoElectronico" value="@Model.correoElectronico" />
-        <br />
+<h1>SPOTIFAKE</h1>
 
-        <label>contraseña</label>
-        <input name="contraseña" value="@Model.contraseña" />
-        <br />
-        <button>Guardar</button>
-    </form>
-</body>
-</html>
+<div class="row">
 
+    <div class="col-md-6 col-md-offset-3">
+
+        <form action="/Usuario/GuardarUsuario" method="post">
+
+            <h3>Registro de usuario</h3>
+            <hr />
+
+            <div class="form-group">
+                <label>Nombres</label>
+                <input class="form-control" name="nombre" value="@Model.nombre" required />
+            </div>
+
+            <div class="form-group">
+                <label>Correo electrónico</label>
+                <input class="form-control" name="correoElectronico" value="@Model.correoElectronico" required />
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input class="form-control" name="contraseña" value="@Model.contraseña" />
+            </div>
+
+            <button class="btn-danger">Guardar</button>
+
+        </form>
+    </div>
+
+</div>
