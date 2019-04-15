@@ -14,7 +14,7 @@ namespace SpotiFake.DataBase.Mapeo
             ToTable("ListaReproduccion");
             HasKey(o => o.idListaReproduccion);
 
-            HasMany(o => o.cancionesListaReproduccion).WithRequired(o => o.listaReproduccion).HasForeignKey(o => o.idListaReproduccion);
+            HasMany(o => o.listaReproduccion_Cancion).WithRequired(o => o.listaReproduccion).HasForeignKey(o => o.idListaReproduccion);
 
             HasRequired(o => o.usuario).WithMany(o => o.listaReproduccion).HasForeignKey(o => o.idUsuario);
         }

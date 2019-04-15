@@ -12,7 +12,7 @@ namespace SpotiFake.DataBase
     {
         public IDbSet<Cancion> Cancions { get; set; }
         public IDbSet<CancionesEscuchadas> CancionesEscuchadass { get; set; }
-        public IDbSet<CancionesListaReproduccion> cancionesListaReproduccions { get; set; }
+        public IDbSet<ListaReproduccion_Cancion> listaReproduccion_Cancions { get; set; }
         public IDbSet<ListaReproduccion> ListaReproduccions { get; set; }
         public IDbSet<Usuario> Usuarios { get; set; }
 
@@ -22,7 +22,7 @@ namespace SpotiFake.DataBase
 
             modelBuilder.Configurations.Add(new MapCancion());
             modelBuilder.Configurations.Add(new MapCancionesEscuchadas());
-            modelBuilder.Configurations.Add(new MapCancionesListaReproduccion());
+            modelBuilder.Configurations.Add(new MapListaReproduccion_Cancion());
             modelBuilder.Configurations.Add(new MapListaReproduccion());
             modelBuilder.Configurations.Add(new MapUsuario());
         }

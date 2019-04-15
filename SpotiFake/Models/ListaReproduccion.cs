@@ -13,6 +13,6 @@ namespace SpotiFake.Models
         public int idUsuario { get; set; }
         public Usuario usuario { get; set; }
 
-        public List<CancionesListaReproduccion> cancionesListaReproduccion { get; set; }
+        public List<ListaReproduccion_Cancion> listaReproduccion_Cancion { get; set; }
     }
 }

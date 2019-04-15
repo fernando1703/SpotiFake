@@ -132,27 +132,28 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\CancionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DataBase\Mapeo\MapCancion.cs" />
     <Compile Include="DataBase\Mapeo\MapCancionesEscuchadas.cs" />
-    <Compile Include="DataBase\Mapeo\MapCancionesListaReproduccion.cs" />
+    <Compile Include="DataBase\Mapeo\MapListaReproduccion_Cancion.cs" />
     <Compile Include="DataBase\Mapeo\MapListaReproduccion.cs" />
     <Compile Include="DataBase\Mapeo\MapUsuario.cs" />
     <Compile Include="DataBase\SpotiFakeContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904110220599_InitDatabase.cs" />
-    <Compile Include="Migrations\201904110220599_InitDatabase.Designer.cs">
-      <DependentUpon>201904110220599_InitDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201904150401024_InitDatabase.cs" />
+    <Compile Include="Migrations\201904150401024_InitDatabase.Designer.cs">
+      <DependentUpon>201904150401024_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancion.cs" />
     <Compile Include="Models\CancionesEscuchadas.cs" />
-    <Compile Include="Models\CancionesListaReproduccion.cs" />
+    <Compile Include="Models\ListaReproduccion_Cancion.cs" />
     <Compile Include="Models\ListaReproduccion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,6 +213,15 @@
     <Content Include="Views\Usuario\UsuarioIndex.cshtml" />
     <Content Include="Views\Usuario\AdminIndex.cshtml" />
     <Content Include="Views\Shared\_LayoutUsuario.cshtml" />
+    <Content Include="Views\Administrador\FormularioAdministrador.cshtml" />
+    <Content Include="Views\Administrador\FormularioModificar.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\Cancion\IndexSys.cshtml" />
+    <Content Include="Views\Cancion\ModificarSys.cshtml" />
+    <Content Include="Views\Cancion\FormularioCancionSys.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_LayoutSYS.cshtml" />
+    <Content Include="Views\Usuario\SysIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -230,8 +240,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904110220599_InitDatabase.resx">
-      <DependentUpon>201904110220599_InitDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904150401024_InitDatabase.resx">
+      <DependentUpon>201904150401024_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

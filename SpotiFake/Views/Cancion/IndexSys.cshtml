@@ -1,7 +1,5 @@
-﻿
+﻿@{Layout = "~/Views/Shared/_LayoutSys.cshtml"; }
 <br />
-
-<h1>SPOTIFAKE</h1>
 
 <table class="table">
     <thead>
@@ -9,7 +7,10 @@
             <th>Portada</th>
             <th>Nombre de canción</th>
             <th>Nombre de artista </th>
+            <th>Nombre de álbum</th>
             <th>Género</th>
+            <th>Duración de canción</th>
+            <th>Fecha de lanzamiento</th>
         </tr>
     </thead>
     <tbody>
@@ -23,13 +24,22 @@
                 </td>
                 <td>@cancion.nombre</td>
                 <td>@cancion.artista</td>
+                <td>@cancion.album</td>
                 <td>@cancion.genero</td>
+                <td>@cancion.duracionCancion</td>
+                <td>@cancion.fechaLanzamiento</td>
                 <td>
-                    <a href="/Cancion/modificar?id=@cancion.idCancion">REPRODUCIR</a>|
-                    <a href="/Cancion/eliminar?id=@cancion.idCancion">AGREGAR A PLAYLIST</a>
+                    <a href="/Cancion/modificar?id=@cancion.idCancion">EDITAR</a>|
+                    <a href="/Cancion/eliminar?id=@cancion.idCancion">ELIMINAR</a>
                 </td>
             </tr>
         }
 
     </tbody>
 </table>
+
+<form action="/Cancion/registrarCancion" method="post">
+    <button class="btn-danger">Registrar canción</button>
+</form>
+
+<br />

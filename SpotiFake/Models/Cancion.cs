@@ -19,6 +19,6 @@ namespace SpotiFake.Models
         public String imagen { get; set; }
 
         public List<CancionesEscuchadas> cancionesEscuchadas { get; set; }
-        public List<CancionesListaReproduccion> cancionesListaReproduccions { get; set; }
+        public List<ListaReproduccion_Cancion> listaReproduccion_Cancion { get; set; }
     }
 }

@@ -2,7 +2,9 @@
 using SpotiFake.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -15,9 +17,9 @@ namespace SpotiFake.Controllers
 
         // GET: Usuario
         [Authorize]
-        public ActionResult UsuarioIndex(Usuario usuario)
+        public ActionResult UsuarioIndex()
         {
-            return View(usuario);
+            return View();
         }
         public ActionResult logOff()
         {
@@ -41,10 +43,47 @@ namespace SpotiFake.Controllers
         {
             return View("NuevoUsuario", new Usuario());
         }
-
+        [Authorize]
         public ActionResult AdminIndex(Usuario usuario)
         {
             return View();
         }
+        [Authorize]
+        public ActionResult SysIndex(Usuario usuario)
+        {
+            return View();
+        }
+        public ActionResult Ingreso(Usuario usuario)
+        {
+            Usuario usuarioConfirmado;
+            //con js ya no es importante usar el try catch 
+            try
+            {
+                usuarioConfirmado = spotiFakeContext.Usuarios.Where(o => o.correoElectronico == usuario.correoElectronico && o.contraseña == usuario.contraseña).First();
+                ViewBag.AccesoConfirmado = usuarioConfirmado;
+                if (usuarioConfirmado.rol == "Admin")
+                {
+
+                    FormsAuthentication.SetAuthCookie(usuario.correoElectronico, false);
+                    return View("AdminIndex");
+                }
+                if (usuarioConfirmado.rol == "Sys")
+                {
+
+                    FormsAuthentication.SetAuthCookie(usuario.correoElectronico, false);
+                    return View("SysIndex");
+                }
+                FormsAuthentication.SetAuthCookie(usuario.correoElectronico, false);
+
+                return View("UsuarioIndex");
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+        }
+
+
     }
 }

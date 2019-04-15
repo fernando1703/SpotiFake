@@ -5,9 +5,9 @@ using System.Web;
 
 namespace SpotiFake.Models
 {
-    public class CancionesListaReproduccion
+    public class ListaReproduccion_Cancion
     {
-        public int idCancionesListaReproduccion { get; set; }
+        public int idListaReproduccion_Cancion { get; set; }
 
         public int idListaReproduccion { get; set; }
         public ListaReproduccion listaReproduccion { get; set; }
