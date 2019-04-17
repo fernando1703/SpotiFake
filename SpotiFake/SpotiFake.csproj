@@ -133,6 +133,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
+    <Compile Include="Controllers\BibliotecaController.cs" />
     <Compile Include="Controllers\CancionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -146,9 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150401024_InitDatabase.cs" />
-    <Compile Include="Migrations\201904150401024_InitDatabase.Designer.cs">
-      <DependentUpon>201904150401024_InitDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201904170510159_InitDatabase.cs" />
+    <Compile Include="Migrations\201904170510159_InitDatabase.Designer.cs">
+      <DependentUpon>201904170510159_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cancion.cs" />
@@ -170,10 +171,30 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Californication.jpg" />
     <Content Include="Images\Chabelos.jpg" />
+    <Content Include="Images\Closer.jpg" />
+    <Content Include="Images\Créeme.jpg" />
+    <Content Include="Images\Cuerpo de Sirena.jpg" />
     <Content Include="Images\Dani california.gif" />
+    <Content Include="Images\Despacito.jpg" />
+    <Content Include="Images\El día de mi suerte.jpg" />
     <Content Include="Images\Feel good inc.jpg" />
+    <Content Include="Images\Felicidad.jpg" />
+    <Content Include="Images\Hello.png" />
     <Content Include="Images\In the end.jpg" />
+    <Content Include="Images\Lean On.jpg" />
+    <Content Include="Images\Lloraras.jpg" />
+    <Content Include="Images\Mix Morena.jpg" />
+    <Content Include="Images\Mix Valentina.jpg" />
+    <Content Include="Images\Motor y Motivo.jpg" />
+    <Content Include="Images\Numb.jpg" />
+    <Content Include="Images\One Dance.jpg" />
+    <Content Include="Images\Shape of you.jpg" />
+    <Content Include="Images\Sorry.jpg" />
+    <Content Include="Images\Te Amare.jpg" />
+    <Content Include="Images\Thinking out loud.jpg" />
+    <Content Include="Images\X%28Equis%29.jpg" />
     <Content Include="Images\You%27re beautiful.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -222,6 +243,9 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_LayoutSYS.cshtml" />
     <Content Include="Views\Usuario\SysIndex.cshtml" />
+    <Content Include="Views\Biblioteca\Index.cshtml" />
+    <Content Include="Views\Biblioteca\RegistrarListaReproduccion.cshtml" />
+    <Content Include="Views\Usuario\Historial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -240,8 +264,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904150401024_InitDatabase.resx">
-      <DependentUpon>201904150401024_InitDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904170510159_InitDatabase.resx">
+      <DependentUpon>201904170510159_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutUsuario.cshtml";
+}
+<br />
+<form action="/Biblioteca/RegistrarListaReproduccion?idUsuario=@ViewBag.AccesoConfirmado.idUsuario" method="post">
+    <button class="btn-danger">Nueva Lista de reproduccion</button>
+</form>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ListaReproduccion in Model)
+        {
+            <tr>
+                <td>@ListaReproduccion.nombre</td>
+
+                <td>
+                    <a href="/Biblioteca/Detalle?id=">Detalle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

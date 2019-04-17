@@ -1,8 +1,9 @@
 ﻿
+@{
+    Layout = "~/Views/Shared/_LayoutUsuario.cshtml";
+
+}
 <br />
-
-<h1>SPOTIFAKE</h1>
-
 <table class="table">
     <thead>
         <tr>
@@ -25,8 +26,8 @@
                 <td>@cancion.artista</td>
                 <td>@cancion.genero</td>
                 <td>
-                    <a href="/Cancion/modificar?id=@cancion.idCancion">REPRODUCIR</a>|
-                    <a href="/Cancion/eliminar?id=@cancion.idCancion">AGREGAR A PLAYLIST</a>
+                    <a href="/Usuario/Reproducir?id=@cancion.idCancion&idU=@ViewBag.AccesoConfirmado.idUsuario">REPRODUCIR</a>|
+                    <a href="/Biblioteca/AgregarPlaylist?id=@cancion.idCancion">AGREGAR A PLAYLIST</a>
                 </td>
             </tr>
         }

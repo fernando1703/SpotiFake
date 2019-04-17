@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Historial";
+}
+
+<h1>SPOTIFAKE</h1>
+
+<br/>
+
+<h2>Historial</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Portada</th>
+            <th>Nombre de canción</th>
+            <th>Fecha de reproducción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cancionesEscuchadas in Model)
+        {
+        <tr>
+            <td>
+                <img src="~/Images/@cancionesEscuchadas.cancion.imagen"
+                     width="80"
+                     height="80" />
+            </td>
+            <td>@cancionesEscuchadas.cancion.nombre</td>
+            <td>@cancionesEscuchadas.fecha</td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+

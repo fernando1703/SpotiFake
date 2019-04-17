@@ -10,6 +10,8 @@ namespace SpotiFake.Models
         public int idListaReproduccion { get; set; }
         public string nombre { get; set; }
 
+        public int idTemporal { get; set; }
+
         public int idUsuario { get; set; }
         public Usuario usuario { get; set; }
 

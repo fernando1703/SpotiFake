@@ -17,9 +17,12 @@ namespace SpotiFake.Controllers
 
         // GET: Usuario
         [Authorize]
-        public ActionResult UsuarioIndex()
+        public ActionResult UsuarioIndex(int idUsuario)
         {
-            return View();
+            var cancion = spotiFakeContext.Cancions.ToList();
+            var usuarioConfirmado = spotiFakeContext.Usuarios.Where(o => o.idUsuario == idUsuario).First();
+            ViewBag.AccesoConfirmado = usuarioConfirmado;
+            return View(cancion);
         }
         public ActionResult logOff()
         {
@@ -59,31 +62,66 @@ namespace SpotiFake.Controllers
             //con js ya no es importante usar el try catch 
             try
             {
+                var cancion = spotiFakeContext.Cancions.ToList();
+                ViewBag.Usuario = null;
                 usuarioConfirmado = spotiFakeContext.Usuarios.Where(o => o.correoElectronico == usuario.correoElectronico && o.contraseña == usuario.contraseña).First();
                 ViewBag.AccesoConfirmado = usuarioConfirmado;
                 if (usuarioConfirmado.rol == "Admin")
                 {
 
                     FormsAuthentication.SetAuthCookie(usuario.correoElectronico, false);
-                    return View("AdminIndex");
+                    return RedirectToAction("AdminIndex");
                 }
                 if (usuarioConfirmado.rol == "Sys")
                 {
 
                     FormsAuthentication.SetAuthCookie(usuario.correoElectronico, false);
-                    return View("SysIndex");
+
+                    return RedirectToAction("SysIndex");
                 }
                 FormsAuthentication.SetAuthCookie(usuario.correoElectronico, false);
 
-                return View("UsuarioIndex");
+                return View("UsuarioIndex", cancion);
             }
             catch (Exception)
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("messenge", "Login");
             }
 
         }
+        public ActionResult Reproducir(int id, int idU)
+        {
+            //instamcia
 
+            var cancionesEscuchadas = new CancionesEscuchadas();
+            cancionesEscuchadas.fecha = DateTime.Now;
+            cancionesEscuchadas.idUsuario = idU;
+            cancionesEscuchadas.idCancion = id;
+            spotiFakeContext.CancionesEscuchadass.Add(cancionesEscuchadas);
+            spotiFakeContext.SaveChanges();
+            var cancion = spotiFakeContext.Cancions.ToList();
+            var usuarioConfirmado = spotiFakeContext.Usuarios.Where(o => o.idUsuario == idU).First();
+            ViewBag.AccesoConfirmado = usuarioConfirmado;
+            return View("UsuarioIndex", cancion);            
+        }
+
+        public ActionResult AgregarPlaylist(int idCancion, int idUsuario)
+        {
+
+            var cancion = spotiFakeContext.Cancions.ToList();
+            var usuarioConfirmado = spotiFakeContext.Usuarios.Where(o => o.idUsuario == idUsuario).ToList();
+            ViewBag.AccesoConfirmado = usuarioConfirmado;
+            return View("UsuarioIndex", cancion);
+        }
+
+        [Authorize]
+        public ActionResult Historial(int idUsuario)
+        {
+            var historial = spotiFakeContext.CancionesEscuchadass.Where(o => o.idUsuario == idUsuario).Include(o => o.cancion);
+            var usuarioConfirmado = spotiFakeContext.Usuarios.Where(o => o.idUsuario == idUsuario).First();
+            ViewBag.AccesoConfirmado = usuarioConfirmado;
+            return View(historial);
+        }
 
     }
 }

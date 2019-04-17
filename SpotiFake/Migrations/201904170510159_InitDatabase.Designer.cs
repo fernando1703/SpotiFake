@@ -13,7 +13,7 @@ namespace SpotiFake.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201904150401024_InitDatabase"; }
+            get { return "201904170510159_InitDatabase"; }
         }
         
         string IMigrationMetadata.Source

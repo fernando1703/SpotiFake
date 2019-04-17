@@ -17,12 +17,38 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Spotifake", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <br />
+                <form action="/Usuario/UsuarioIndex" method="post">
+                    <button name="idUsuario" value="@ViewBag.AccesoConfirmado.idUsuario" class="btn btn-link" ">Inicio</button>
+                    <br />
+                </form>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Mis listas de reproducion", "Index", "home")</li>
+                    <li>
+                        <br />
+                        <form action="/Biblioteca/Index" method="post">
+                            <button name="idUsuario" value="@ViewBag.AccesoConfirmado.idUsuario" class="btn btn-link">Tu Biblioteca</button>
+                            <br />
+                        </form>
 
+                    </li>
+                    <li>
+                        <br />
+                        <form action="/Usuario/Historial" method="post">
+                            <button name="idUsuario" value="@ViewBag.AccesoConfirmado.idUsuario" class="btn btn-link">Canciones Recientes</button>
+                            <br />
+                        </form>
+
+                    </li>
+                    <li>
+                        <br />
+                        <form action="/Explorar/IndexUsuario" method="post">
+                            <button name="idUsuario" value="@ViewBag.AccesoConfirmado.idUsuario" class="btn btn-link">Explorar</button>
+                            <br />
+                        </form>
+
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Cerrar Sesión", "logOff", "Usuario")</li>
